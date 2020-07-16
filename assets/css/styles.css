@@ -1,0 +1,54 @@
+.checkList__itemFlag:checked ~ .checkList__itemText {
+    text-decoration: line-through;
+}
+
+.checkList__itemFlagIcon {
+    width: 10px;
+    height: 10px;
+    display: inline-flex;
+    background-color: transparent;
+    border: 1px solid black;
+    position: relative;
+}
+
+.checkList__itemFlagIcon:before,
+.checkList__itemFlagIcon:after{
+    content: '';
+    display: block;
+    background-color: transparent;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(0, 0) rotate(0);
+    transition: background-color .3s ease, transform .3s ease;
+}
+
+
+.checkList__itemFlagIcon:before {
+    width: 6px;
+    height: 1px;
+    transform-origin: right center;
+
+}
+
+.checkList__itemFlag:checked ~ .checkList__itemFlagIcon:before {
+    background-color: black;
+    transform: translate(-100%, 3px) rotate(45deg);
+}
+
+.checkList__itemFlagIcon:after {
+    width: 10px;
+    height: 1px;
+    transform-origin: left center;
+}
+
+.checkList__itemFlag:checked ~ .checkList__itemFlagIcon:after {
+     background-color: black;
+     transform: translate(0, 3px) rotate(-45deg);
+}
+
+.addText {
+    width: 300px;
+    height: 56px;
+    padding: 8px 12px; 
+}
